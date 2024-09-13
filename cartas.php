@@ -114,20 +114,26 @@ $cartas[5] = new Carta("Caminho para o Exílio", "w", "mágica instantânea", 5,
 $cartas[6] = new Carta("Anel Solar", "1", "artefato", 5, 7);
 $cartas[7] = new Carta("Ato Blásfemo", "8r", "feitiço", 10, 8);
 
+print("As cartas são:\n");
+
+for ($i=0; $i < count($cartas); $i++) { 
+    print("Carta " . $i+1 . " - Nome: " . $cartas[$i]->getNome() . " Custo de mana: " . $cartas[$i]->getCustoMana() . " Tipo: " . $cartas[$i]->getTipo() . " Valor: " . $cartas[$i]->getValor() . "\n");
+}
+
 $carta_sorteada = $cartas[array_rand($cartas)];
 $adivinha = 0;
 $tentativas = 0;
 
-while($adivinha != $carta_sorteada->getNome()){
+while($adivinha != $carta_sorteada->getNum()){
     $tentativas++;
-    print("\nAdivinhe o nome(digite 0 para sair):");
+    print("\nAdivinhe o numero(digite 0 para sair):");
     $adivinha = readline();
 
-    if($carta_sorteada->getNome() == $adivinha){
+    if($carta_sorteada->getNum() == $adivinha){
         print("\nVocê acertou! sua pontuação foi de: " . 100/$tentativas);
     }else if($adivinha == 0){
         die();
-    }else if($carta_sorteada->getNome() != $adivinha){
+    }else if($carta_sorteada->getNum() != $adivinha){
         print("\nVocẽ errou.");
 
         $adivinha = rand(1, 2);
@@ -138,7 +144,7 @@ while($adivinha != $carta_sorteada->getNome()){
 
             switch ($adivinha) {
                 case 1:
-                    print("\nO custo de mana é: " . $carta_sorteada->getNome());
+                    print("\nO custo de mana é: " . $carta_sorteada->getCustoMana());
                 break;
 
                 case 2:
