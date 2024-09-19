@@ -117,7 +117,7 @@ $cartas[7] = new Carta("Ato Blásfemo", "8r", "feitiço", 10, 8);
 print("As cartas são:\n");
 
 for ($i=0; $i < count($cartas); $i++) { 
-    print("Carta " . $i+1 . " - Nome: " . $cartas[$i]->getNome() . " Custo de mana: " . $cartas[$i]->getCustoMana() . " Tipo: " . $cartas[$i]->getTipo() . " Valor: " . $cartas[$i]->getValor() . "\n");
+    print("Carta " . $i+1 . " - Nome: " . $cartas[$i]->getNome() . " | Custo de mana: " . $cartas[$i]->getCustoMana() . " | Tipo: " . $cartas[$i]->getTipo() . " | Valor: " . $cartas[$i]->getValor() . "\n");
 }
 
 $carta_sorteada = $cartas[array_rand($cartas)];
